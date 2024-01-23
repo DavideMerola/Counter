@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Guess The Order Game</title>
+  </head>
+  <body>
+    <main>
+      <section id="games">
+        <img class="win" src="assets/images/win.svg" alt="winIMG" />
+        <img class="lose" src="assets/images/lose.svg" alt="loseIMG" />
+
+        <button id="reset" class="button_style">Reset</button>
+      </section>
+
+      <section class="container">
+        <article>
+          <h1>Guess The Order...</h1>
+          <div>
+            <p id="mix_order">0</p>
+          </div>
+        </article>
+
+        <div class="center">
+          <div id="div_counters"></div>
+          <div class="div_buttons"></div>
+        </div>
+
+        <button id="check" class="button_style">Check</button>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

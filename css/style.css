@@ -1,0 +1,219 @@
+* {
+  margin: 0 auto;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+h1 {  
+  font-size: clamp(2.9rem, 2rem + 4vw, 5rem);  
+}
+
+p {  
+  margin-bottom: 25px;
+  font-size: clamp(2.4rem, 2rem + 2vw, 4rem);  
+}
+
+body {
+  background-image: linear-gradient(to right, #00b4db, #0083b0);  
+}
+
+.container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh; 
+  /* margin-top: 4rem;   */
+  /* max-width: 700px;   */
+  text-align: center;
+  color: white;     
+  flex-direction: column; 
+}
+
+#div_counters {
+  margin-top: 20px;   
+  display: flex;
+  background-color: rgb(235, 235, 235);
+  color: #0083b0;
+  border: 2px solid #0083b0;  
+}
+
+.counter {
+  display: flex;
+  padding: 20px;
+  font-size: clamp(7rem, 1rem + 30vw, 15rem);  
+  border: 1px solid #0083b0;
+}
+
+.counter:hover {
+  background-color: rgba(209, 209, 209, 0.527);
+  cursor: pointer;
+}
+
+/* Angoli */
+.counter:last-of-type {
+  border-top-right-radius: 22px;
+  border-end-end-radius: 22px;    
+}
+.counter:first-of-type {
+  border-top-left-radius: 22px;
+  border-end-start-radius: 22px;
+}
+#div_counters:nth-child(1) {
+  border-top-right-radius: 25px;
+  border-end-end-radius: 25px;  
+}
+#div_counters:first-of-type {
+  border-top-left-radius: 25px;
+  border-end-start-radius: 25px;
+}
+
+.red-anim {
+  animation: animate_red 1.5s alternate infinite;  
+}
+
+.selector {
+  border: 2px solid rgba(0, 0, 0, 0.836);  
+  color: #00526d;  
+}
+
+.div_buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+  
+}
+
+.button_style {
+  background-color: #e1ecf4;
+  border-radius: 10px;
+  border: 1px solid #7aa7c7;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px 1.8em;  
+}
+
+.button_style:hover {
+  background-color: #accfe7;
+  color: #2c5777;
+}
+
+#reset {
+  pointer-events: none;
+  position: absolute;
+  /* top: 0; */
+  /* right: 0; */
+  opacity: 0;  
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 100;  
+}
+
+#reset.show{
+  opacity: 1;
+  transition: 1s;      
+  pointer-events: auto;    
+}
+
+.win {     
+  position: fixed;           
+  pointer-events: none;  
+  opacity: 0;
+  max-width: 400px;  
+  width: 70%;
+  height: auto;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);  
+}
+
+.win.show {  
+  opacity: 1;
+  transition: 1s;      
+}
+
+.lose {
+  position: fixed;           
+  pointer-events: none;  
+  opacity: 0;
+  max-width: 400px;  
+  width: 70%;
+  height: auto;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);  
+  z-index: 10;
+}
+
+.lose.show {
+  opacity: 1;
+  transition: 1s;    
+}
+
+/* ANIMATION */
+.shake {
+  animation: shake 0.5s;
+}
+
+.green{  
+  animation: animate_green 1.5s alternate infinite;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Glow Animation */
+@keyframes animate_red {
+  from {
+    text-shadow: none;
+    }
+  to
+  {
+    text-shadow: 
+    -1px -1px 1px #FF0000,
+    -1px 1px 1px #FF0000, 
+    1px -1px 1px #FF0000,
+    1px 1px 1px #FF0000,
+    0 0 5px #FF0000,
+    0 0 10px #FF0000,
+    0 0 30px #FF0000, 
+    0 0 50px #FF0000, 
+    0 0 100px #FF0000 ;
+    }
+  }
+  
+  @keyframes animate_green {
+    from {
+      text-shadow: none;
+      }
+    to
+    {
+      text-shadow: 
+      -1px -1px 1px #00FF00,
+      -1px 1px 1px #00FF00, 
+      1px -1px 1px #00FF00,
+      1px 1px 1px #00FF00,
+      0 0 5px #00FF00,
+      0 0 10px #00FF00,
+      0 0 30px #00FF00, 
+      0 0 50px #00FF00, 
+      0 0 100px #00FF00 ;
+      }
+    }
+
