@@ -8,6 +8,8 @@
 
 The main objective was to implement a counter using JavaScript to create the counter and the buttons.
 
+**Link to the project** - **[Here](https://davidemerola.github.io/Counter/)**
+
 ---
 
 ### Technologies Used
